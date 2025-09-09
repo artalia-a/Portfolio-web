@@ -12,7 +12,9 @@ export default function BlogDetail() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`http://127.0.0.1:8000/api/blogs/${slug}`);
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/blogs/${slug}`
+        );
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         setBlog(data.data || null);
@@ -53,7 +55,7 @@ export default function BlogDetail() {
         <img
           src={
             blog.image
-              ? `http://127.0.0.1:8000${blog.image}`
+              ? `https://portfolio-api-production-709b.up.railway.app${blog.image}`
               : "/default-image.jpg"
           }
           alt={blog.title}

@@ -22,7 +22,7 @@ export default function BlogsList() {
         return;
       }
 
-      const res = await fetch("http://localhost:8000/api/admin/blogs", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs`, {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
@@ -34,14 +34,20 @@ export default function BlogsList() {
         throw new Error("Failed to fetch blogs");
       }
 
-      const data = await res.json();
-      setBlogs(data);
+      const result = await res.json();
 
-      // Ambil kategori unik dari blogs
-      const uniqueCategories = ["All", ...new Set(data.map((b) => b.category))];
+      // ✅ Pastikan mengambil array dari properti 'data'
+      const blogsData = Array.isArray(result.data) ? result.data : [];
+      setBlogs(blogsData);
+
+      // Ambil kategori unik
+      const uniqueCategories = [
+        "All",
+        ...new Set(blogsData.map((b) => b.category)),
+      ];
       setCategories(uniqueCategories);
 
-      setFilteredBlogs(data);
+      setFilteredBlogs(blogsData);
     } catch (err) {
       console.error("Fetch error:", err);
     }
@@ -66,7 +72,8 @@ export default function BlogsList() {
       );
     }
 
-    setFilteredBlogs(temp);
+    // ✅ Pastikan filteredBlogs selalu array
+    setFilteredBlogs(Array.isArray(temp) ? temp : []);
   }, [selectedCategory, searchTitle, blogs]);
 
   // Delete blog
@@ -76,10 +83,13 @@ export default function BlogsList() {
 
     if (!confirm("Delete this blog?")) return;
 
-    const res = await fetch(`http://localhost:8000/api/admin/blogs/${id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/blogs/${id}`,
+      {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
 
     if (res.ok) {
       setBlogs(blogs.filter((b) => b.id !== id));
@@ -117,11 +127,12 @@ export default function BlogsList() {
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
-            {categories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
-              </option>
-            ))}
+            {Array.isArray(categories) &&
+              categories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              ))}
           </select>
         </div>
 
@@ -138,7 +149,7 @@ export default function BlogsList() {
 
       {loading ? (
         <div>Loading...</div>
-      ) : filteredBlogs.length === 0 ? (
+      ) : !Array.isArray(filteredBlogs) || filteredBlogs.length === 0 ? (
         <div className="text-gray-500">No blogs found.</div>
       ) : (
         <div className="space-y-4">
@@ -150,7 +161,8 @@ export default function BlogsList() {
               <div>
                 <div className="font-semibold">{b.title}</div>
                 <div className="text-sm text-gray-500">
-                  {b.author} — {new Date(b.created_at).toLocaleString()}
+                  {b.author} —{" "}
+                  {b.created_at ? new Date(b.created_at).toLocaleString() : "-"}
                 </div>
                 <div className="text-sm text-gray-400">
                   Category: {b.category}

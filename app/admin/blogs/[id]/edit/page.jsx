@@ -19,12 +19,15 @@ export default function EditBlog() {
       }
 
       try {
-        const res = await fetch(`http://localhost:8000/api/admin/blogs/${id}`, {
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/admin/blogs/${id}`,
+          {
+            headers: {
+              Accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         if (!res.ok) {
           if (res.status === 401) router.push("/admin/blogs/login");
@@ -53,20 +56,23 @@ export default function EditBlog() {
     }
 
     try {
-      const res = await fetch(`http://localhost:8000/api/admin/blogs/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          title: blog.title,
-          content: blog.content,
-          author: blog.author,
-          category: blog.category,
-          image: blog.image,
-        }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/blogs/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            title: blog.title,
+            content: blog.content,
+            author: blog.author,
+            category: blog.category,
+            image: blog.image,
+          }),
+        }
+      );
 
       if (!res.ok) {
         const d = await res.json();

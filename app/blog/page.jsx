@@ -114,7 +114,7 @@ export default function BlogPage() {
                   <img
                     src={
                       blog.image
-                        ? `http://127.0.0.1:8000${blog.image}`
+                        ? `https://portfolio-api-production-709b.up.railway.app${blog.image}`
                         : "/default-image.jpg"
                     }
                     alt={blog.title}
