@@ -146,7 +146,10 @@ export default function ProjectDetail() {
           </div>
         </motion.div>
       </div>
-      <Footer />
+      <div>
+        <hr className="border-t-1 border-[#806D9C] mx-30" />
+        <Footer />
+      </div>
     </>
   );
 }

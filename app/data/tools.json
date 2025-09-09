@@ -15,9 +15,9 @@
     "description": "Programming language for the web."
   },
   {
-    "title": "HTML",
-    "image": "/assets/html.svg",
-    "description": "Markup language for web pages."
+    "title": "CSS",
+    "image": "/assets/css.png",
+    "description": "Style sheet language for web pages."
   },
   {
     "title": "Flutter",

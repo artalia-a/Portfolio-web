@@ -149,8 +149,9 @@ const About = () => {
           ))}
         </div>
       </motion.div>
-      <hr className="border-t-1 border-[#806D9C] mx-30 mt-15 shadow-lg" />
+
       <div>
+        <hr className="border-t-1 border-[#806D9C] mx-30 mt-15 shadow-lg" />
         <Footer />
       </div>
     </div>

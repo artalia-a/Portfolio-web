@@ -86,8 +86,9 @@ const contact = () => {
           </div>
         </div>
       </motion.div>
-      <hr className="border-t-1 border-[#806D9C] ml-30 mr-30 mt-65" />
+
       <div>
+        <hr className="border-t-1 border-[#806D9C] ml-30 mr-30 mt-65" />
         <Footer />
       </div>
     </div>
