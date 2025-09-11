@@ -26,7 +26,7 @@ const Header = () => {
             <Link
               key={link.href}
               href={link.href}
-              className={`relative text-gray-800 hover:text-[#806D9C] ${
+              className={`relative text-lg text-gray-800 hover:text-[#806D9C] ${
                 isActive ? "text-[#806D9C] font-semibold" : ""
               }`}
             >

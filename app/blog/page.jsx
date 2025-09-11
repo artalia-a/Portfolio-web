@@ -61,7 +61,7 @@ export default function BlogPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false }}
         >
-          <p className="text-3xl font-bold mb-2">
+          <p className="text-5xl font-bold mb-2">
             Inspiration Awaits{" "}
             <span className="text-[#6531b3]">in Every Post</span>
           </p>

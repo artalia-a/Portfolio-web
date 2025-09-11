@@ -17,7 +17,7 @@ const About = () => {
         <Header />
       </div>
       <div className="mx-30 mt-65">
-        <p className="text-4xl mb-8 font-bold">Hi!, I'm Artini Artalia</p>
+        <p className="text-5xl mb-8 font-bold">Hi!, I'm Artini Artalia</p>
         <p className="text-gray-800 ">
           Enthusiastic designing UI/UX and implementing them with frontend code
           — <br />
@@ -47,10 +47,10 @@ const About = () => {
             <p className="text-lg mb-8 font-semibold">LITTLE ABOUT ME</p>
           </div>
           <div className="pr-20">
-            <p className="text-base mb-2  text-gray-700 text-justify">
+            <p className="text-base mb-2 text-gray-700 text-justify">
               I am a{" "}
               <span className="font-bold">
-                UI/UX Designer and Front-End Developer
+                UI/UX Designer and Front-End Developer{" "}
               </span>{" "}
               passionate about creating intuitive and engaging digital
               experiences. In addition to design, I have a strong interest in
@@ -67,7 +67,7 @@ const About = () => {
               using modern frameworks, allowing me to bridge the gap between
               design and implementation effectively.
             </p>
-            <p className="text-base   text-gray-700 text-justify">
+            <p className="text-base text-gray-700 text-justify">
               I am an adaptive and collaborative individual who is always eager
               to learn new things in the ever-evolving digital landscape. My
               goal is to deliver digital solutions that are not only
@@ -76,7 +76,7 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="relative  mt-15">
+        <div className="relative mt-15">
           <div className=" ">
             <Image
               src={Gambar2}
@@ -101,11 +101,13 @@ const About = () => {
           Discover the powerful tools and technologies I use to create
           exceptional, high-performing websites & applications.
         </p>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {Tools.map((tool, index) => (
             <div
               key={index}
-              className="rounded-lg border border-[#806D9C] p-2 flex flex-row items-start gap-4"
+              className="rounded-lg border border-[#806D9C] p-2 flex flex-row items-start gap-4 
+                 transition duration-300 ease-in-out 
+                 hover:shadow-lg hover:border-[#5A4D70] hover:scale-105"
             >
               <Image
                 src={tool.image}
