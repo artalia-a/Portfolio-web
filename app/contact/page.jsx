@@ -43,7 +43,7 @@ const Contact = () => {
           <div className="flex items-center gap-3">
             {/* WhatsApp */}
             <a
-              href="https://wa.me/6283119679411"
+              href="https://wa.me/6281547622969"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#806D9C] rounded-full p-2 hover:bg-white hover:outline-2 hover:outline-[#806D9C] outline-transparent transition group"

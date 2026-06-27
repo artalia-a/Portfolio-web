@@ -19,9 +19,10 @@ const About = () => {
       <div className="mx-30 mt-65">
         <p className="text-5xl mb-8 font-bold">Hi!, I'm Artini Artalia</p>
         <p className="text-gray-800 ">
-          Enthusiastic designing UI/UX and implementing them with frontend code
-          — <br />
-          bridging visuals and functionality in every project.
+          Passionate about UI/UX design, frontend development, and data
+          analytics — <br />
+          creating user-centered digital solutions supported by meaningful
+          insights.
         </p>
       </div>
       <div className="mx-30 mb-40 mt-10">
@@ -48,6 +49,16 @@ const About = () => {
           </div>
           <div className="pr-20">
             <p className="text-base mb-2 text-gray-700 text-justify">
+              Fresh graduate in Information Systems with a strong interest in
+              Business Analysis, Enterprise Systems, and Digital Transformation.
+              Experienced in system requirements analysis, UI/UX design, web
+              application development, technical documentation, and records
+              management. Possess strong analytical, communication, and teamwork
+              skills, and eager to contribute to developing technology-driven
+              solutions that improve business process efficiency and
+              organizational operations.
+            </p>
+            {/* <p className="text-base mb-2 text-gray-700 text-justify">
               I am a{" "}
               <span className="font-bold">
                 UI/UX Designer and Front-End Developer{" "}
@@ -73,7 +84,7 @@ const About = () => {
               goal is to deliver digital solutions that are not only
               aesthetically pleasing and consistent but also provide real value
               to users.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="relative mt-15">
