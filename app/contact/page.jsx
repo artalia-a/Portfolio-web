@@ -31,7 +31,7 @@ const Contact = () => {
         <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-4">
           {/* Button Email */}
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=artini.artalia501@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=artalia.ar@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm sm:text-base bg-[#806D9C] text-white py-2 px-6 rounded-2xl hover:bg-white hover:text-[#806D9C] outline-2 outline-transparent hover:outline-[#806D9C] transition text-center"
